@@ -18,14 +18,18 @@ Solution:
 
 class Solution:
     def increasingTriplet(self, nums):
-        first, second = float('inf')
+        first = second = float('inf')
 
         for i in nums:
-            if i < first:
+            if i <= first:
                 first = i
-            elif i < second:
+            elif i <= second:
                 second = i
             else:
                 return True
 
         return False
+
+test = Solution()
+x = [1, 1, 1, 1, 1, 1, 1, 1]
+print(test.increasingTriplet(x))
